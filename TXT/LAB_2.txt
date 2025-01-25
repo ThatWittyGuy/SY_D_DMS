@@ -1,0 +1,36 @@
+CREATE TABLE EMPLOYEE (
+    Emp_no INT PRIMARY KEY,
+    E_name VARCHAR(50),
+    E_address VARCHAR(100),
+    E_ph_no VARCHAR(15),
+    Dept_no INT,
+    Dept_name VARCHAR(50),
+    Job_id VARCHAR(20),
+    Salary DECIMAL(10, 2)
+);
+
+-- 1. Insert at least 5 rows into the table
+INSERT INTO EMPLOYEE (Emp_no, E_name, E_address, E_ph_no, Dept_no, Dept_name, Job_id, Salary) VALUES
+(1, 'Atharva', 'Pune', '1234567890', 10, 'CSAI', 'Student', 5000),
+(2, 'John', 'Los Angeles', '9876543211', 20, 'MECH', 'Engineer', 4000),
+(3, 'Alice', 'Chicago', '9876543212', 30, 'HR', 'HR Manager', 3500),
+(4, 'Bob', 'Houston', '9876543213', 10, 'SALES', 'Salesperson', 3000),
+(12, 'Cathy', 'Dallas', '9876543214', 20, 'MECH', 'Technician', 2500);
+
+-- 2. Display all the information of EMPLOYEE table
+SELECT * FROM EMPLOYEE;
+
+-- 3. Display the record of each employee who works in department D10
+SELECT * FROM EMPLOYEE WHERE Dept_no = 10;
+
+-- 4. Update the city of Emp_no-12 with current city as Nagpur
+UPDATE EMPLOYEE SET E_address = 'Nagpur' WHERE Emp_no = 12;
+
+-- 5. Display the details of Employee who works in department MECH
+SELECT * FROM EMPLOYEE WHERE Dept_name = 'MECH';
+
+-- 6. Delete the email_id of employee James
+UPDATE EMPLOYEE SET email_id = NULL WHERE E_name = 'James';
+
+-- 7. Display the complete record of employees working in SALES Department
+SELECT * FROM EMPLOYEE WHERE Dept_name = 'SALES';
